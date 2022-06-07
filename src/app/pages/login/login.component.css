@@ -1,0 +1,67 @@
+.background-img {
+  background-image: url('/assets/img/novelski.jpg');
+  background-color: #cccccc;
+  background-size: cover;
+  height: 100vh;
+  overflow: auto;
+}
+.card-body-bg{
+    background-color:cadetblue !important;
+}
+.txtColor {
+color:white !important;
+font-size: 18px !important;
+}
+
+input[type="checkbox"] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.btnSubmit {
+  background-color: #09cc57;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.dangerColor {
+  color: #da2b40;
+  font-weight: bold;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 18.5px;
+}
+
+
+.required-asterisk {
+  color: red;
+  font-weight: bold;
+  margin-left: 3px;
+  font-size: 1.2em;
+}
+
+button[type="submit"] {
+  border: none;
+  outline: none;
+  background: none;
+  border: 0px;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}

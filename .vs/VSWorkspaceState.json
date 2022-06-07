@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\layouts",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\song",
+    "\\src\\app\\pages\\song\\manage-song",
+    "\\src\\app\\pages\\song\\service",
+    "\\src\\environments"
+  ],
+  "PreviewInSolutionExplorer": false
+}

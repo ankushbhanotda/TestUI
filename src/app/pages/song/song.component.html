@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card demo-icons">
+      <div class="row ml-3">
+        <div class="col">
+          <h4>Song List</h4>
+        </div>
+        <div class="col mt-4">
+          <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search..." (input)="Search(searchText)" style="width: 70%; height:50px;" name="search">
+        </div>
+        <div class="col">
+          <button type="button" (click)="AddNewSong()" style="background-color: #38dc5b;" class="btn pull-right text-white"><i class="fa fa-plus mr-2"></i>Add New Song</button>
+        </div>
+      </div>
+
+      <div class="card-body all-icons">
+        <div id="icons-wrapper">
+          <section>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Artist</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Popularity</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let data of songRecord">
+                <tr>
+                  <td>{{data.name}}</td>
+                  <td>{{data.artistId}}</td>
+                  <td>{{data.time}}</td>
+                  <td>{{data.popularity}}</td>
+                  <td>{{data.price}}</td>
+                  <td><button type="button"  (click)="UpdateSong(data.songId)"><i class="fa fa-edit" style="font-size: 24px; color: green" aria-hidden="true"></i></button>
+                  <button (click)="DeleteSong(data.songId)"><i class="fa fa-trash" style="font-size: 24px; color: red"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

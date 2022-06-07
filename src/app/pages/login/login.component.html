@@ -1,0 +1,57 @@
+<div class="background-img">
+<div class="card card-body-bg  mt-3" style="width: 18rem;">
+  <div class="card-body">
+    <form novalidate [formGroup]="AccountForm" (ngSubmit)="submit()" style="margin-left:25px;">
+
+      <div class="row mt-5 form-group">
+        <div class="col-sm-12 align-items-center d-flex justify-content-center">
+          <h5 class="txtColor">LOGIN</h5>
+        </div>
+      </div>
+
+
+      <div class="row mt-2 form-group">
+        <div class="col-sm-12">
+          <label  class="txtColor">Username: <span class="required-asterisk">*</span></label>
+          <input type="text" class="form-control mt-2" placeholder="Name" formControlName="userName" required>
+          <div *ngIf="AccountForm.get('userName').touched && AccountForm.get('userName').invalid" class="alert alert-danger">
+            <span *ngIf="AccountForm.get('userName').errors.required">Name is required.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3 form-group">
+        <div class="col-sm-12 mb-2">
+          <label  class="txtColor">Password: <span class="required-asterisk">*</span></label>
+          <input type="text" class="form-control mt-2" placeholder="Password" formControlName="password" required>
+          <div *ngIf="AccountForm.get('password').touched && AccountForm.get('password').invalid" class="alert alert-danger">
+            <span *ngIf="AccountForm.get('password').errors.required">password Name is required.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ml-3 mt-3 mr-3">
+        <input type="checkbox" style="margin-top:7px;" />
+        <label class="ml-2 txtColor">Remember me ..</label>
+      </div>
+
+      <div class="row mt-3 mr-3">
+        <div class="col-sm-12 align-items-center d-flex justify-content-center" style="background-color:deeppink; padding:5px;">
+          <button type="submit" class="txtColor" [disabled]="(AccountForm.invalid && AccountForm.touched)">LOGIN</button>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mt-3  form-group">
+        <div class="col-sm-12 align-items-center d-flex justify-content-center">
+          <h5 class="txtColor">Forgot Password ?</h5>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+</div>

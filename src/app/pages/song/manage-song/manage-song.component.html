@@ -1,0 +1,118 @@
+<div class="container card">
+  <form novalidate [formGroup]="ManageSongForm" (ngSubmit)="submit()">
+    <div class="row mt-3 mb-3">
+      <div class="col-sm-6">
+        <label>Name: <span class="required-asterisk" style="color: red;">*</span></label>
+        <input type="text" class="form-control" placeholder="Name" formControlName="name"
+               [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.name.errors }" required>
+        <div *ngIf="submitted  && ManageSongForm.controls.name.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.name.errors.required">Name is required</span>
+        </div>
+
+        <div *ngIf="ManageSongForm.get('name').touched && ManageSongForm.get('name').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('name').errors.required">Fill the Name.</span>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-6">
+        <label>Artist: <span class="required-asterisk">*</span></label>
+        <select class="form-control" placeholder="Select Artist" formControlName="artistId" [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.artistId.errors }" required>
+          <option [ngValue]="null" value="">Select</option>
+          <option *ngFor="let data of artistData" [value]="data.artistId">{{data.name}}</option>
+        </select>
+        <div *ngIf="submitted  && ManageSongForm.controls.artistId.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.artistId.errors.required">Artist is required</span>
+        </div>
+
+
+        <div *ngIf="ManageSongForm.get('artistId').touched && ManageSongForm.get('artistId').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('artistId').errors.required">
+            Please select a Artist.
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-3 mb-3">
+
+      <div class="col-sm-6">
+        <label>Duration Time: <span style="color: red;">*</span></label>
+        <input type="number" class="form-control" placeholder="Duration Time" formControlName="time"
+               [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.time.errors }" required>
+        <div *ngIf="submitted  && ManageSongForm.controls.time.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.time.errors.required">Duration time is required</span>
+        </div>
+
+        <div *ngIf="ManageSongForm.get('time').touched && ManageSongForm.get('time').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('time').errors.required">Fill  time duration.</span>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label>Popularity: <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" placeholder="Popularity" formControlName="popularity"
+               [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.popularity.errors }" required>
+        <div *ngIf="submitted  && ManageSongForm.controls.popularity.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.popularity.errors.required">Popularity  is required</span>
+        </div>
+
+        <div *ngIf="ManageSongForm.get('popularity').touched && ManageSongForm.get('popularity').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('popularity').errors.required">Fill  Popularity.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+      <div class="col-sm-6">
+        <label>Genre: <span class="required-asterisk">*</span></label>
+        <select class="form-control" placeholder="Select Genre" formControlName="genreId" [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.genreId.errors }" required>
+          <option [ngValue]="null" value="">Select</option>
+          <option *ngFor="let data of genreData" [value]="data.genreId">{{data.name}}</option>
+        </select>
+        <div *ngIf="submitted  && ManageSongForm.controls.genreId.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.genreId.errors.required">genre is required</span>
+        </div>
+
+        <div *ngIf="ManageSongForm.get('genreId').touched && ManageSongForm.get('genreId').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('genreId').errors.required">
+            Please select a genre.
+          </span>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label>Price: <span style="color: red;">*</span></label>
+        <input type="number" class="form-control" placeholder="Price" formControlName="price"
+               [ngClass]="{ 'is-invalid': submitted && ManageSongForm.controls.price.errors }" required>
+        <div *ngIf="submitted  && ManageSongForm.controls.price.errors">
+          <span class="text-danger" *ngIf="ManageSongForm.controls.price.errors.required">price  is required</span>
+        </div>
+
+        <div *ngIf="ManageSongForm.get('price').touched && ManageSongForm.get('price').invalid">
+          <span class="text-danger" *ngIf="ManageSongForm.get('price').errors.required">Fill  price.</span>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="row mt-3 mb-3 mr-3">
+      <div class="col-sm-12">
+        <div class="float-right row box mt-3">
+          <button type="submit" [disabled]="(ManageSongForm.invalid && ManageSongForm.touched)"
+                  class="btn mr-2 plusColor">
+            <i class="fa fa-plus mr-2" aria-hidden="true"></i>Save
+          </button>
+          <button type="button" (click)="goToSongListPage()" class="btn cancelColor">
+            <i class="fa fa-undo  mr-2"
+               aria-hidden="true"></i>Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

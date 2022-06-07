@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card demo-icons">
+      <div class="row ml-3">
+        <div class="col">
+          <h4>Artist List</h4>
+        </div>
+        <div class="col mt-4">
+          <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search..." (input)="Search(searchText)" style="width: 70%; height:50px;" name="search">
+        </div>
+      </div>
+
+      <div class="card-body all-icons">
+        <div id="icons-wrapper">
+          <section>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">artist Id</th>
+                  <th scope="row">Name</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let data of artistRecord">
+                <tr>
+                  <td>{{data.artistId}}</td>
+                  <td>{{data.name}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
